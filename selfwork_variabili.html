@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selfwork Variabili - JavaScript</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; margin: 0; }
+    main { max-width: 720px; margin: 40px auto; padding: 24px; }
+    h1 { margin-top: 0; }
+    .card { background: #f6f7fb; border: 1px solid #e4e6ef; border-radius: 12px; padding: 16px 20px; }
+    .muted { color: #666; font-size: 0.95rem; }
+    p { margin: 6px 0; }
+    code { background: #eef1f6; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Selfwork Variabili – JavaScript</h1>
+    <p class="muted">Il risultato dei vari passaggi appare qui sotto.</p>
+    <div id="out" class="card" aria-live="polite"></div>
+  </main>
+
+  <!-- Script inserito prima della chiusura del body, come richiesto -->
+  <script>
+    // Funzione di utilità per stampare a schermo
+    const out = document.getElementById('out');
+    function print(msg) {
+      const p = document.createElement('p');
+      p.textContent = msg;
+      out.appendChild(p);
+    }
+
+    // 1) dichiara una variabile num1, e assegnale un numero qualsiasi
+    let num1 = 7; // puoi cambiare questo numero
+
+    // 2) dichiara una variabile num2, e assegnale un numero qualsiasi
+    let num2 = 42; // puoi cambiare questo numero
+
+    // 3) visualizza a schermo il valore di num1 e num2
+    print(`Valore di num1: ${num1}`);
+    print(`Valore di num2: ${num2}`);
+
+    // 4) dichiara una variabile chiamata stringa
+    let stringa = "Ciao mondo!";
+
+    // 5) stampa a schermo il valore di stringa
+    print(`Valore di stringa: ${stringa}`);
+
+    // 6) sostituisci il valore di stringa e stampalo
+    stringa = "Nuovo valore per la variabile stringa";
+    print(`Nuovo valore di stringa: ${stringa}`);
+
+    // 7) dichiara una costante PIGRECO
+    const PIGRECO = 3.14159265359;
+
+    // 8) visualizza a schermo il valore di PIGRECO
+    print(`Valore della costante PIGRECO: ${PIGRECO}`);
+
+    // 9) prova a cambiare il valore della costante e vedi cosa succede
+    // Reassegnare una const genera un TypeError: lo mostriamo con un try/catch
+    try {
+ 
+      PIGRECO = 3.14; // TypeError: Assignment to constant variable.
+      print(`PIGRECO dopo riassegnazione: ${PIGRECO}`);
+    } catch (err) {
+      print(`Errore tentando di cambiare PIGRECO: ${err}`);
+      console.error("Errore di riassegnazione:", err);
+    }
+  </script>
+</body>
+</html>
